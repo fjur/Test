@@ -1,0 +1,5 @@
+gunicorn==19.7.1
+honcho==1.0.1
+grpc
+grpcio==1.10.0
+futures

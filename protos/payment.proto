@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.filip.grpc.payment";
+option java_outer_classname = "PaymentProto";
+
+package protos;
+
+service Payment {
+    rpc GetPayment(PaymentId) returns (PaymentMessage) {}
+}
+
+message PaymentId{
+    int32 paymentId = 1;
+}
+
+message PaymentMessage {
+    string amount = 1;
+}

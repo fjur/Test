@@ -1,0 +1,21 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: telemetry-server
+  labels:
+    app: telemetry
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: telemetry-server
+  template:
+    metadata:
+      labels:
+        app: telemetry-server
+    spec:
+      containers:
+      - name: telemetry-app
+        image: fjur/telemetry_server:latest
+        ports:
+        - containerPort: 50051

@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package test;
+
+service Telemetry {
+    rpc GetLog(LogId) returns (Log) {}
+    rpc AddLog(Log) returns (LogId) {}
+}
+
+message LogId{
+    int32 logId = 1;
+}
+
+message Log {
+    LogId logId = 1;
+    string logMessage = 2;
+}
